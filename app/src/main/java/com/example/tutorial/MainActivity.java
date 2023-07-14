@@ -33,12 +33,21 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(P, MODE_PRIVATE);
 
         int id = sharedPreferences.getInt(userId, 0);
-        if (id != 0) {
+
+        if(id != 0 && id != 4)
+        {
+
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
             return;
+        }else if(id == 4){
+            Intent intent = new Intent(MainActivity.this, HomeAdminActivity.class);
+            startActivity(intent);
+            finish();
+            return;
         }
+
 
         setContentView(R.layout.activity_main);
 
@@ -60,12 +69,12 @@ public class MainActivity extends AppCompatActivity {
         String username = txtUser.getText().toString();
         String password = txtPass.getText().toString();
 
-        int id = sharedPreferences.getInt(userId, 0);
-        if (id != 0) {
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            startActivity(intent);
-            return;
-        }
+//        int id = sharedPreferences.getInt(userId, 0);
+//        if (id != 0) {
+//            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//            startActivity(intent);
+//            return;
+//        }
 
         ApiInterface apiInterface = RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
         Call<LoginResponse> call = apiInterface.login(new LoginRequest(username, password));
@@ -81,8 +90,14 @@ public class MainActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putInt("userId", userId);
                     editor.apply();
+                    if(userId == 4){
+                        Intent intentAdmin = new Intent(MainActivity.this, HomeAdminActivity.class);
+                        startActivity(intentAdmin);
+                        return;
+                    }
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(intent);
+
                     Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.e(TAG, "onResponse: Response not successful");
