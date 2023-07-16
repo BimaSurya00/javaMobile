@@ -1,16 +1,17 @@
 package com.example.tutorial;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class HomeAdminActivity extends AppCompatActivity {
 
+    CardView cvHistory,cvStatusLaporan;
     private Button buttonLogout;
 //    private TextView textViewUserId;
     private SharedPreferences sharedPreferences;
@@ -32,6 +33,7 @@ public class HomeAdminActivity extends AppCompatActivity {
         });
 
         int id = sharedPreferences.getInt(userId, 0);
+        setInitLayout();
     }
     private void logout() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -41,5 +43,24 @@ public class HomeAdminActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeAdminActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void setInitLayout() {
+        cvHistory = findViewById(R.id.cvRiwayatLaporan);
+//        btnLogout = findViewById(R.id.ivLogout);
+        cvStatusLaporan = findViewById(R.id.cvStatusLaporan);
+//        btnLogout.setOnClickListener(v->{
+//            Intent intent = new Intent(AdminActivity.this, LoginActivity.class);
+//            startActivity(intent);
+//        });
+        cvHistory.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeAdminActivity.this, HistoryAdminActivity.class);
+            startActivity(intent);
+        });
+        cvStatusLaporan.setOnClickListener(v->{
+            Intent intent = new Intent(HomeAdminActivity.this, StatusLaporanActivity.class);
+            startActivity(intent);
+        });
+
     }
 }
