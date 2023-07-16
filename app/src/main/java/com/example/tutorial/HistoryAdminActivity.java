@@ -28,6 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 public class HistoryAdminActivity extends AppCompatActivity implements ReportAdapter.HistoryAdapterCallback{
 
+    ApiInterface apiInterface = RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
     List<ReportItem> modelDatabaseList = new ArrayList<>();
     ReportAdapter historyAdapter;
     public static String result;
@@ -71,7 +72,7 @@ public class HistoryAdminActivity extends AppCompatActivity implements ReportAda
     }
 
     private void setViewModel() {
-        ApiInterface apiInterface = RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
+
         Call<ReportResponse> reportResponseCall = apiInterface.getAllReports();
         reportResponseCall.enqueue(new Callback<ReportResponse>() {
             @Override
@@ -137,14 +138,31 @@ public class HistoryAdminActivity extends AppCompatActivity implements ReportAda
 
     @Override
     public void onDelete(ReportItem modelDatabase) {
+
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Hapus riwayat ini?");
-//        alertDialogBuilder.setPositiveButton("Ya, Hapus", (dialogInterface, i) -> {
-//            int uid = modelDatabase.uid;
-//            historyViewModel.deleteDataById(uid);
-//            Toast.makeText(HistoryActivity.this,
-//                    "Yeay! Data yang dipilih sudah dihapus", Toast.LENGTH_SHORT).show();
-//        });
+        alertDialogBuilder.setPositiveButton("Ya, Hapus", (dialogInterface, i) -> {
+            Call<DeleteReportResponse> deleteReportResponseCall = apiInterface.delReport(modelDatabase.getIntId());
+            deleteReportResponseCall.enqueue(new Callback<DeleteReportResponse>() {
+                @Override
+                public void onResponse(@NotNull Call<DeleteReportResponse> call, @NotNull Response<DeleteReportResponse> response) {
+                    if (response.isSuccessful()) {
+                        setViewModel();
+                        Toast.makeText(HistoryAdminActivity.this,
+                                "Yeay! Data yang dipilih sudah dihapus", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(@NotNull Call<DeleteReportResponse> call, @NotNull Throwable t) {
+                    Toast.makeText(HistoryAdminActivity.this,
+                            "Gagal hapus data", Toast.LENGTH_SHORT).show();
+                    Log.d("NetworkCall", "Failed Fetch getLeague()/Failure");
+                }
+            });
+
+
+        });
 
         alertDialogBuilder.setNegativeButton("Batal", (dialogInterface, i) -> dialogInterface.cancel());
 
