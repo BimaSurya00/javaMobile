@@ -22,7 +22,7 @@
             android:layout_marginBottom="20dp">
 
             <ImageView
-                android:id="@+id/ivLogout"
+                android:id="@+id/button_logout"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="2dp"
@@ -31,16 +31,16 @@
                 android:layout_marginEnd="5dp"
                 android:src="@drawable/logout" />
 
-            <Button
-                android:id="@+id/button_logout"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="2dp"
-                android:layout_toStartOf="@+id/ivLogout"
+<!--            <Button-->
+<!--                android:id="@+id/button_logout"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginEnd="2dp"-->
+<!--                android:layout_toStartOf="@+id/ivLogout"-->
 
-                android:backgroundTint="@color/white"
-                android:text="Logout"
-                android:textColor="@color/red" />
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:text="Logout"-->
+<!--                android:textColor="@color/red" />-->
 
 
         </RelativeLayout>

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private Button buttonLogout;
+    private ImageView buttonLogout;
     private TextView textViewUserId;
     CardView cvHistory, cvSekertariat, cvLakwas, cvTurbin, cvP2, cvP3;
 
