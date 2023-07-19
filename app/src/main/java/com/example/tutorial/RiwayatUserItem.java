@@ -2,7 +2,7 @@ package com.example.tutorial;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ReportUserItem {
+public class RiwayatUserItem {
     @SerializedName("content")
     private String Content;
 
@@ -13,7 +13,7 @@ public class ReportUserItem {
     private int Id;
 
     @SerializedName("image_url")
-    private String Image;
+    private String ImageUrl;
 
     @SerializedName("phone")
     private String Phone;
@@ -24,11 +24,11 @@ public class ReportUserItem {
     @SerializedName("type_report")
     private String typeReport;
 
-    public ReportUserItem(String content, String date, int id, String image, String phone, String status, String typeReport) {
+    public RiwayatUserItem(String content, String date, int id, String image, String phone, String status, String typeReport) {
         Content = content;
         Date = date;
         Id = id;
-        Image = image;
+        ImageUrl = image;
         Phone = phone;
         Status = status;
         this.typeReport = typeReport;
@@ -59,11 +59,11 @@ public class ReportUserItem {
     }
 
     public String getImage() {
-        return Image;
+        return ImageUrl;
     }
 
     public void setImage(String image) {
-        Image = image;
+        ImageUrl = image;
     }
 
     public String getPhone() {

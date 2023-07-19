@@ -6,9 +6,9 @@ import retrofit2.http.POST;
 public interface ApiInterface {
 
 
-    @POST("/login")
+    @POST("login")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 
-    @GET("/reports/{id}")
-    Call<ReportUserResponse> getReports();
+    @GET("reports")
+    Call<RiwayatUserResponse> getReports();
 }

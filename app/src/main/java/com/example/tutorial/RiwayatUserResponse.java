@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ReportUserResponse {
+public class RiwayatUserResponse {
     @SerializedName("data")
-    private List<ReportUserItem> reportUserItems;
+    private List<RiwayatUserItem> reportUserItems;
 
-    public  List<ReportUserItem> getReportUserItems() {
+    public  List<RiwayatUserItem> getReportUserItems() {
         return reportUserItems;
     }
-    public void setReportUserItems(List<ReportUserItem> reportUserItems){
+    public void setReportUserItems(List<RiwayatUserItem> reportUserItems){
         this.reportUserItems = reportUserItems;
     }
 }

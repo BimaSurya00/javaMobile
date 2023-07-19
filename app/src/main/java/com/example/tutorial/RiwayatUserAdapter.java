@@ -10,23 +10,26 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 import android.widget.LinearLayout;
 
 
-public class ReportUserAdapter extends RecyclerView.Adapter<ReportUserAdapter.ViewHolder> {
-    private List<ReportUserItem> reportUserItems;
-    private Context mContext;
-    private HistoryAdapterCallback mAdapterCallback;
+public class RiwayatUserAdapter extends RecyclerView.Adapter<RiwayatUserAdapter.ViewHolder> {
 
-    public ReportUserAdapter(Context context, List<ReportUserItem> reportUserItems, HistoryAdapterCallback adapterCallback) {
+    private List<RiwayatUserItem> reportUserItems;
+    private Context mContext;
+
+    public RiwayatUserAdapter(Context context, List<RiwayatUserItem> reportUserItems) {
         this.mContext = context;
-        this.reportUserItems = reportUserItems;
-        this.mAdapterCallback = adapterCallback;
+        if (reportUserItems == null) {
+            this.reportUserItems = new ArrayList<>(); // Initialize with an empty list if it's null
+        } else {
+            this.reportUserItems = reportUserItems;
+        }
     }
 
-
-    public void setData(List<ReportUserItem> items) {
+    public void setData(List<RiwayatUserItem> items) {
         reportUserItems.clear();
         reportUserItems.addAll(items);
         notifyDataSetChanged();
@@ -42,7 +45,7 @@ public class ReportUserAdapter extends RecyclerView.Adapter<ReportUserAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ReportUserItem reportUserItem = reportUserItems.get(position);
+        RiwayatUserItem reportUserItem = reportUserItems.get(position);
 
         holder.tvKategori.setText(reportUserItem.getTypeReport());
         holder.tvHP.setText(reportUserItem.getPhone());
@@ -74,10 +77,6 @@ public class ReportUserAdapter extends RecyclerView.Adapter<ReportUserAdapter.Vi
         return reportUserItems.size();
     }
 
-    public interface HistoryAdapterCallback {
-        void onDelete(ReportUserItem reportUserItem);
-    }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvKategori;
@@ -85,7 +84,6 @@ public class ReportUserAdapter extends RecyclerView.Adapter<ReportUserAdapter.Vi
         TextView tvLaporan;
         TextView tvHP;
         TextView tvStatus;
-        CardView cvHistory;
         LinearLayout layoutHeader;
 
         public ViewHolder(@NonNull View itemView) {
@@ -96,19 +94,8 @@ public class ReportUserAdapter extends RecyclerView.Adapter<ReportUserAdapter.Vi
             tvDate = itemView.findViewById(R.id.tvDate);
             tvHP = itemView.findViewById(R.id.tvHP);
             tvStatus = itemView.findViewById(R.id.statuslapor);
-            cvHistory = itemView.findViewById(R.id.cvHistory);
             layoutHeader = itemView.findViewById(R.id.layoutHeader);
-
-
-            // Implementasikan interaksi item laporan seperti penghapusan jika diperlukan
-            // Misalnya, implementasikan listener onClick untuk menghapus item
-            cvHistory.setOnClickListener(v -> {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    ReportUserItem reportUserItem = reportUserItems.get(position);
-                    mAdapterCallback.onDelete(reportUserItem);
-                }
-            });
         }
     }
 }
+
