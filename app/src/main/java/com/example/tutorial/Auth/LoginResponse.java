@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.Auth;
 
 public class LoginResponse {
     public int user_id;

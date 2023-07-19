@@ -1,14 +1,16 @@
-package com.example.tutorial;
+package com.example.tutorial.HomeUser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.tutorial.Auth.MainActivity;
+import com.example.tutorial.R;
 
 public class HomeActivity extends AppCompatActivity {
 

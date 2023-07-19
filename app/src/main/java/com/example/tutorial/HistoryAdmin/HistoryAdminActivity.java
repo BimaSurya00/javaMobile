@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.HistoryAdmin;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -18,6 +18,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tutorial.Api.ApiInterface;
+import com.example.tutorial.R;
+import com.example.tutorial.Retrofit.RetrofitClient;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -26,7 +30,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-public class HistoryAdminActivity extends AppCompatActivity implements ReportAdapter.HistoryAdapterCallback{
+public class HistoryAdminActivity extends AppCompatActivity implements ReportAdapter.HistoryAdapterCallback {
 
     ApiInterface apiInterface = RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
     List<ReportItem> modelDatabaseList = new ArrayList<>();

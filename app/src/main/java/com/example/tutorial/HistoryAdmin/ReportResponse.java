@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.HistoryAdmin;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.HomeAdmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -8,6 +8,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.tutorial.HistoryAdmin.HistoryAdminActivity;
+import com.example.tutorial.Auth.MainActivity;
+import com.example.tutorial.R;
+import com.example.tutorial.StatusLaporanAdmin.StatusLaporanActivity;
 
 public class HomeAdminActivity extends AppCompatActivity {
 

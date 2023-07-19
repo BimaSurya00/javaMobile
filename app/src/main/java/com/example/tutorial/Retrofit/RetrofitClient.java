@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.Retrofit;
 
 import com.google.gson.Gson;
 
