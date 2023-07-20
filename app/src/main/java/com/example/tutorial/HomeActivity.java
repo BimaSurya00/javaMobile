@@ -1,6 +1,7 @@
 package com.example.tutorial;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,6 +22,8 @@ public class HomeActivity extends AppCompatActivity {
     private static final String userId = "userId";
     private static final String P = "MyPrefs";
 
+    CardView cvHistory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,20 @@ public class HomeActivity extends AppCompatActivity {
 
         int id = sharedPreferences.getInt(userId, 0);
 //        textViewUserId.setText("User ID: " + id);
+        setInitLayout();
+    }
+
+    private void setInitLayout() {
+        cvHistory = findViewById(R.id.cvRiwayatUser);
+
+
+        cvHistory.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, HistoryUserActivity.class);
+//            intent.putExtra(HistoryUserActivity.Data, strTitle);
+            startActivity(intent);
+        });
+
+
     }
 
     private void logout() {
