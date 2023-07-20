@@ -59,6 +59,7 @@ public class StatusLaporanAdapter extends RecyclerView.Adapter<StatusLaporanAdap
         holder.tvKategorist.setText(data.getStrType());
         holder.tvHPst.setText(data.getStrPhone());
         holder.tvDatest.setText(data.getStrDate());
+        holder.tvLaporanst.setText(data.getStrContent());
         final int[] checkedItem = {-1};
         holder.tvDone.setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
@@ -167,6 +168,7 @@ public class StatusLaporanAdapter extends RecyclerView.Adapter<StatusLaporanAdap
             tvLaporanst = itemView.findViewById(R.id.tvLaporanstat);
             tvDatest = itemView.findViewById(R.id.tvDatestat);
             tvHPst = itemView.findViewById(R.id.tvHPstat);
+
             cv = itemView.findViewById(R.id.cvStatusLaporan);
             tvDone = itemView.findViewById(R.id.btnDone);
             layoutHeader = itemView.findViewById(R.id.layoutHeader);

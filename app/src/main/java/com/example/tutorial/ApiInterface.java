@@ -26,4 +26,7 @@ public interface ApiInterface {
     @PUT("admin/report/{report_id}")
     Call<UpdateStatusResponse> updateStatus(@Body UpdateStatusRequest updateStatusRequest, @Path("report_id") int report_id);
 
+    @GET("reports/{user_id}")
+    Call<ReportResponse> getReportsById(@Path("user_id") int userId);
+
 }

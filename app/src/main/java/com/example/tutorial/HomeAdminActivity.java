@@ -47,12 +47,8 @@ public class HomeAdminActivity extends AppCompatActivity {
 
     private void setInitLayout() {
         cvHistory = findViewById(R.id.cvRiwayatLaporan);
-//        btnLogout = findViewById(R.id.ivLogout);
         cvStatusLaporan = findViewById(R.id.cvStatusLaporan);
-//        btnLogout.setOnClickListener(v->{
-//            Intent intent = new Intent(AdminActivity.this, LoginActivity.class);
-//            startActivity(intent);
-//        });
+
         cvHistory.setOnClickListener(v -> {
             Intent intent = new Intent(HomeAdminActivity.this, HistoryAdminActivity.class);
             startActivity(intent);
