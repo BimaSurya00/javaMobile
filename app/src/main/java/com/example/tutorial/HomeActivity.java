@@ -22,7 +22,9 @@ public class HomeActivity extends AppCompatActivity {
     private static final String userId = "userId";
     private static final String P = "MyPrefs";
 
-    CardView cvHistory;
+    String  strTitle;
+
+    CardView cvSekertariat, cvLakwas, cvTurbin, cvP2, cvP3, cvHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,49 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setInitLayout() {
         cvHistory = findViewById(R.id.cvRiwayatUser);
+
+        cvSekertariat = findViewById(R.id.cvSekertariat);
+        cvLakwas = findViewById(R.id.cvLakwas);
+        cvTurbin = findViewById(R.id.cvTurbin);
+        cvP2    = findViewById(R.id.cvP2);
+        cvP3    = findViewById(R.id.cvP3);
+
+
+        cvSekertariat.setOnClickListener(v -> {
+            strTitle = "Laporan Kerusakan Barang Sekertariat";
+            Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
+            intent.putExtra(ReportActivity.DATA_TITLE, strTitle);
+            startActivity(intent);
+        });
+
+        cvLakwas.setOnClickListener(v -> {
+            strTitle = "Laporan Kerusakan Barang Lakwas";
+            Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
+            intent.putExtra(ReportActivity.DATA_TITLE, strTitle);
+            startActivity(intent);
+
+        });
+
+        cvTurbin.setOnClickListener(v -> {
+            strTitle = "Laporan Kerusakan Barang Turbin";
+            Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
+            intent.putExtra(ReportActivity.DATA_TITLE, strTitle);
+            startActivity(intent);
+        });
+
+        cvP2.setOnClickListener(v -> {
+            strTitle = "Laporan Kerusakan Barang P2";
+            Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
+            intent.putExtra(ReportActivity.DATA_TITLE, strTitle);
+            startActivity(intent);
+        });
+
+        cvP3.setOnClickListener(v -> {
+            strTitle = "Laporan Kerusakan Barang P3";
+            Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
+            intent.putExtra(ReportActivity.DATA_TITLE, strTitle);
+            startActivity(intent);
+        });
 
 
         cvHistory.setOnClickListener(v -> {
