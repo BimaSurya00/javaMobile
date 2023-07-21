@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class HomeAdminActivity extends AppCompatActivity {
 
@@ -18,14 +20,15 @@ public class HomeAdminActivity extends AppCompatActivity {
     private static final String userId = "userId";
     private static final String P = "MyPrefs";
 
+    ImageView btnLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_admin);
         sharedPreferences = getSharedPreferences(P, MODE_PRIVATE);
 
-        buttonLogout = findViewById(R.id.button_logout);
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+        btnLogout = findViewById(R.id.ivLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logout();
@@ -41,6 +44,7 @@ public class HomeAdminActivity extends AppCompatActivity {
         editor.apply();
 
         Intent intent = new Intent(HomeAdminActivity.this, MainActivity.class);
+        Toast.makeText(HomeAdminActivity.this, "Logout berhasil!", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
     }

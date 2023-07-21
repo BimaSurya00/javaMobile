@@ -9,7 +9,9 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -26,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
 
     CardView cvSekertariat, cvLakwas, cvTurbin, cvP2, cvP3, cvHistory;
 
+    ImageView btnLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +37,8 @@ public class HomeActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(P, MODE_PRIVATE);
 
 //        textViewUserId = findViewById(R.id.txtfullname);
-        buttonLogout = findViewById(R.id.button_logout);
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+        btnLogout = findViewById(R.id.ivLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logout();
@@ -55,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         cvTurbin = findViewById(R.id.cvTurbin);
         cvP2    = findViewById(R.id.cvP2);
         cvP3    = findViewById(R.id.cvP3);
-
+        btnLogout = findViewById(R.id.ivLogout);
 
         cvSekertariat.setOnClickListener(v -> {
             strTitle = "Laporan Kerusakan Barang Sekertariat";
@@ -110,6 +113,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Intent intent = new Intent(HomeActivity.this, MainActivity.class);
         startActivity(intent);
+        Toast.makeText(HomeActivity.this, "Logout berhasil!", Toast.LENGTH_SHORT).show();
         finish();
     }
 }
