@@ -90,6 +90,8 @@ public class ReportActivity extends AppCompatActivity {
         setSendLaporan();
     }
 
+
+
     private void setInitLayout() {
         toolbar = findViewById(R.id.toolbar);
         tvTitle = findViewById(R.id.tvTitle);
