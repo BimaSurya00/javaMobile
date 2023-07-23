@@ -1,9 +1,8 @@
-package com.example.tutorial;
+package com.example.tutorial.Admin.StatusLaporan;
 
 import com.google.gson.annotations.SerializedName;
 
-public class PostFormResponse {
-
+public class UpdateStatusResponse {
     @SerializedName("message")
     private String strMessage;
 

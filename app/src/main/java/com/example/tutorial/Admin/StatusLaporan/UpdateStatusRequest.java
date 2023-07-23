@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.Admin.StatusLaporan;
 
 public class UpdateStatusRequest {
     public int status;

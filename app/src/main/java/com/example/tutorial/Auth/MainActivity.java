@@ -1,6 +1,4 @@
-package com.example.tutorial;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.tutorial.Auth;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.button.MaterialButton;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tutorial.API.ApiInterface;
+import com.example.tutorial.User.Home.HomeActivity;
+import com.example.tutorial.Admin.Home.HomeAdminActivity;
+import com.example.tutorial.R;
+import com.example.tutorial.Retrofit.RetrofitClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;

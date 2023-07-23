@@ -1,8 +1,8 @@
-package com.example.tutorial;
+package com.example.tutorial.User.Report;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DeleteReportResponse {
+public class PostFormResponse {
 
     @SerializedName("message")
     private String strMessage;

@@ -1,5 +1,6 @@
-package com.example.tutorial;
+package com.example.tutorial.User.Report;
 
+import com.example.tutorial.User.Report.ReportItem;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
