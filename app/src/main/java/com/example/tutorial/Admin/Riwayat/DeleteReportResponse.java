@@ -1,8 +1,9 @@
-package com.example.tutorial;
+package com.example.tutorial.Admin.Riwayat;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UpdateStatusResponse {
+public class DeleteReportResponse {
+
     @SerializedName("message")
     private String strMessage;
 

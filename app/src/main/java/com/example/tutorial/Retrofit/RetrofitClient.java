@@ -1,6 +1,4 @@
-package com.example.tutorial;
-
-import com.google.gson.Gson;
+package com.example.tutorial.Retrofit;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

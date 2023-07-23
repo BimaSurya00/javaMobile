@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.Admin.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.tutorial.Admin.Riwayat.HistoryAdminActivity;
+import com.example.tutorial.Admin.StatusLaporan.StatusLaporanActivity;
+import com.example.tutorial.Auth.MainActivity;
+import com.example.tutorial.R;
 
 public class HomeAdminActivity extends AppCompatActivity {
 

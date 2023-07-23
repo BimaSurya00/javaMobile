@@ -20,37 +20,37 @@
         android:theme="@style/Theme.LaporanMasyarakat"
         tools:targetApi="31">
         <activity
-            android:name=".ReportActivity"
+            android:name=".User.Report.ReportActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoryUserActivity"
+            android:name=".User.Riwayat.HistoryUserActivity"
             android:exported="false" />
         <activity
-            android:name=".StatusLaporanActivity"
+            android:name=".Admin.StatusLaporan.StatusLaporanActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoryAdminActivity"
+            android:name=".Admin.Riwayat.HistoryAdminActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HomeAdminActivity"
+            android:name=".Admin.Home.HomeAdminActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".User.Home.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Auth.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

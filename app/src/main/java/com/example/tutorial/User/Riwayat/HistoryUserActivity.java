@@ -1,7 +1,6 @@
-package com.example.tutorial;
+package com.example.tutorial.User.Riwayat;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -11,13 +10,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.tutorial.API.ApiInterface;
+import com.example.tutorial.R;
+import com.example.tutorial.User.Report.ReportResponse;
+import com.example.tutorial.Retrofit.RetrofitClient;
+import com.example.tutorial.User.Report.ReportAdapter;
+import com.example.tutorial.User.Report.ReportItem;
 
 import org.jetbrains.annotations.NotNull;
 
