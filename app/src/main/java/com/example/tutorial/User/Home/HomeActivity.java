@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         cvSekertariat = findViewById(R.id.cvSekertariat);
         cvLakwas = findViewById(R.id.cvLakwas);
         cvTurbin = findViewById(R.id.cvTurbin);
-        cvP2    = findViewById(R.id.cvP2);
+        cvP2    = findViewById(R.id.cvP5);
         cvP3    = findViewById(R.id.cvP3);
         btnLogout = findViewById(R.id.ivLogout);
 
@@ -87,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         cvP2.setOnClickListener(v -> {
-            strTitle = "Laporan Kerusakan Barang P2";
+            strTitle = "Laporan Kerusakan Barang P5";
             Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
             intent.putExtra(ReportActivity.DATA_TITLE, strTitle);
             startActivity(intent);

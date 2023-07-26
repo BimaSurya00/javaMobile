@@ -145,7 +145,7 @@ public class StatusLaporanAdapter extends RecyclerView.Adapter<StatusLaporanAdap
             case "Laporan Kerusakan Barang Turbin":
                 holder.layoutHeader.setBackgroundResource(R.color.purple_700);
                 break;
-            case "Laporan Kerusakan Barang P2":
+            case "Laporan Kerusakan Barang P5":
                 holder.layoutHeader.setBackgroundResource(R.color.teal_200);
                 break;
             case "Laporan Kerusakan Barang P3":
