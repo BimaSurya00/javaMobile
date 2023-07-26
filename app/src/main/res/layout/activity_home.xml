@@ -242,7 +242,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvP2"
+                android:id="@+id/cvP5"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
@@ -262,7 +262,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="20dp"
                         android:layout_weight="1"
-                        android:text="Bidang P2"
+                        android:text="Bidang P5"
                         android:textColor="@color/white"
                         android:textSize="24sp"
                         android:textStyle="bold" />
