@@ -42,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
         {
 
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
             return;
         }else if(id == 4){
             Intent intent = new Intent(MainActivity.this, HomeAdminActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
             return;
