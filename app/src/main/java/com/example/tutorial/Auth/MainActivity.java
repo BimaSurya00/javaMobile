@@ -98,10 +98,12 @@ public class MainActivity extends AppCompatActivity {
                     editor.apply();
                     if(userId == 4){
                         Intent intentAdmin = new Intent(MainActivity.this, HomeAdminActivity.class);
+                        intentAdmin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intentAdmin);
                         return;
                     }
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
 
                     Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
