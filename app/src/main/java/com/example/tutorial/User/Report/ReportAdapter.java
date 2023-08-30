@@ -5,12 +5,14 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.tutorial.R;
 
 import java.util.List;
@@ -27,7 +29,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
     HistoryAdapterCallback mAdapterCallback;
 
     public ReportAdapter(Context context, List<ReportItem> modelDatabaseList,
-                          HistoryAdapterCallback adapterCallback) {
+                         HistoryAdapterCallback adapterCallback) {
         this.mContext = context;
         this.modelDatabase = modelDatabaseList;
         this.mAdapterCallback = adapterCallback;
@@ -53,13 +55,18 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
         holder.tvHP.setText(data.getStrPhone());
         holder.tvDate.setText(data.getStrDate());
         holder.tvLaporan.setText(data.getStrContent());
+        holder.imageLaporan.setVisibility(View.VISIBLE);
 
-//        if (text==null) {
-//            SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-//            text = sharedPreferences.getString(TEXT, "");
-//            holder.tvstatus.setText(text);
-//            holder.tvstatus.setTextColor(Color.GREEN);
-//        }
+        if (data.getStrImg() != null && !data.getStrImg().isEmpty()) {
+            Glide.with(mContext)
+                    .load(data.getStrImg())
+
+                    .into(holder.imageLaporan);
+        } else {
+            holder.imageLaporan.setVisibility(View.GONE);
+//            holder.tvNoImage.setVisibility(View.VISIBLE);
+        }
+
         switch (data.getIntStatus()) {
             case 0:
                 holder.tvstatus.setText("Belum Diproses");
@@ -115,6 +122,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
         public TextView tvstatus;
         public CardView cvHistory;
         public LinearLayout layoutHeader;
+        public ImageView imageLaporan;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -126,11 +134,12 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
             cvHistory = itemView.findViewById(R.id.cvHistory);
             layoutHeader = itemView.findViewById(R.id.layoutHeader);
             tvstatus = itemView.findViewById(R.id.tvStatuslapor);
+            imageLaporan = itemView.findViewById(R.id.imageLaporan);
             cvHistory.setOnClickListener(view -> {
                 ReportItem modelLaundry = modelDatabase.get(getAdapterPosition());
                 mAdapterCallback.onDelete(modelLaundry);
             });
-            //        holder.tvstatus = mContext.().getExtras().getString(DATA_STATUS);
+
         }
     }
 }

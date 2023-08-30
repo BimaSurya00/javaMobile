@@ -12,7 +12,7 @@ public class ReportItem {
     @SerializedName("id")
     private int intId;
 
-    @SerializedName("img_url")
+    @SerializedName("image_url")
     private String strImg;
 
     @SerializedName("status")
@@ -28,21 +28,23 @@ public class ReportItem {
         return strContent;
     }
 
-    public String getStrPhone(){
+    public void setStrContent(String strContent) {
+        this.strContent = strContent;
+    }
+
+    public String getStrPhone() {
         return strPhone;
     }
 
-    public void getStrPhone (String strPhone) {this.strPhone = strPhone; }
-
-    public void getStrContent(String strContent) {
-        this.strContent = strContent;
+    public void setStrPhone(String strPhone) {
+        this.strPhone = strPhone;
     }
 
     public String getStrDate() {
         return strDate;
     }
 
-    public void getStrDate(String strDate) {
+    public void setStrDate(String strDate) {
         this.strDate = strDate;
     }
 
@@ -50,7 +52,7 @@ public class ReportItem {
         return strImg;
     }
 
-    public void getStrImg(String strImg) {
+    public void setStrImg(String strImg) {
         this.strImg = strImg;
     }
 
@@ -58,7 +60,7 @@ public class ReportItem {
         return strType;
     }
 
-    public void getStrType(String strType) {
+    public void setStrType(String strType) {
         this.strType = strType;
     }
 
@@ -66,7 +68,7 @@ public class ReportItem {
         return intId;
     }
 
-    public void getIntId(int intId) {
+    public void setIntId(int intId) {
         this.intId = intId;
     }
 
@@ -74,9 +76,7 @@ public class ReportItem {
         return intStatus;
     }
 
-    public void getIntStatus(int intStatus) {
+    public void setIntStatus(int intStatus) {
         this.intStatus = intStatus;
     }
-
-
 }
