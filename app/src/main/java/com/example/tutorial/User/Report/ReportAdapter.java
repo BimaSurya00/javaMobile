@@ -60,7 +60,6 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
         if (data.getStrImg() != null && !data.getStrImg().isEmpty()) {
             Glide.with(mContext)
                     .load(data.getStrImg())
-
                     .into(holder.imageLaporan);
         } else {
             holder.imageLaporan.setVisibility(View.GONE);
