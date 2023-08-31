@@ -16,6 +16,9 @@ import com.example.tutorial.User.Home.HomeActivity;
 import com.example.tutorial.Admin.Home.HomeAdminActivity;
 import com.example.tutorial.R;
 import com.example.tutorial.Retrofit.RetrofitClient;
+import com.onesignal.Continue;
+import com.onesignal.OneSignal;
+import com.onesignal.debug.LogLevel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,9 +33,28 @@ public class MainActivity extends AppCompatActivity {
     private static final String userId = "userId";
     private static final String P = "MyPrefs";
 
+    private static final String ONESIGNAL_APP_ID = "58482fcd-5f0a-47f3-8fe2-81968252abaa";
+    private Object data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        OneSignal.getDebug().setLogLevel(LogLevel.VERBOSE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this, ONESIGNAL_APP_ID);
+//        OneSignal.getNotifications().requestPermission(Continue.with(r -> {
+//            if (r.isSuccess()) {
+//
+//                if () {
+//                    // `requestPermission` completed successfully and the user has accepted permission
+//                }
+//
+//            }
+//            else {
+//                // `requestPermission` completed unsuccessfully, check `r.getThrowable()` for more info on the failure reason
+//            }
+//        }));
 
         sharedPreferences = getSharedPreferences(P, MODE_PRIVATE);
 
@@ -47,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }else if(id == 4){
+
             Intent intent = new Intent(MainActivity.this, HomeAdminActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
