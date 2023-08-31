@@ -134,14 +134,14 @@ public class ReportActivity extends AppCompatActivity {
                             case 0:
                                 Dexter.withContext(ReportActivity.this)
                                         .withPermissions(Manifest.permission.CAMERA,
-                                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                                Manifest.permission.ACCESS_COARSE_LOCATION,
+                                                Manifest.permission.READ_MEDIA_IMAGES,
                                                 Manifest.permission.ACCESS_FINE_LOCATION)
                                         .withListener(new MultiplePermissionsListener() {
                                             @Override
                                             public void onPermissionsChecked(MultiplePermissionsReport report) {
                                                 if (report.areAllPermissionsGranted()) {
                                                     Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+
                                                             MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                                                     startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO);
                                                 }
@@ -156,8 +156,8 @@ public class ReportActivity extends AppCompatActivity {
                             case 1:
                                 Dexter.withContext(ReportActivity.this)
                                         .withPermissions(Manifest.permission.CAMERA,
-                                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
                                                 Manifest.permission.ACCESS_COARSE_LOCATION,
+                                                Manifest.permission.READ_MEDIA_IMAGES,
                                                 Manifest.permission.ACCESS_FINE_LOCATION)
                                         .withListener(new MultiplePermissionsListener() {
                                             @Override
