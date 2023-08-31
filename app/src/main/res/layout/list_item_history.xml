@@ -38,8 +38,8 @@
         <!-- Inside your RecyclerView item layout (list_item_history.xml) -->
         <ImageView
             android:id="@+id/imageLaporan"
-            android:layout_width="390dp"
-            android:layout_height="240dp"
+            android:layout_width="380dp"
+            android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:layout_marginEnd="16dp"
             />
