@@ -9,7 +9,7 @@ public class RetrofitClient {
     public static Retrofit getRetrofitInstance(){
         if(retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://flask-production-a5f1.up.railway.app/")
+                    .baseUrl("https://web-production-0517.up.railway.app/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 

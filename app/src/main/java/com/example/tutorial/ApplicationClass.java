@@ -5,7 +5,7 @@ import android.app.Application;
 import com.onesignal.OneSignal;
 
 public class ApplicationClass extends Application {
-    private final String ONESIGNAL_APP_ID = "58482fcd-5f0a-47f3-8fe2-81968252abaa";
+    private final String ONESIGNAL_APP_ID = "79045777-5704-4935-a619-9eaf29e7f419";
     @Override
     public void onCreate() {
         super.onCreate();
